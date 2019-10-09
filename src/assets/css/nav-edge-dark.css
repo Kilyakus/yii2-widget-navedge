@@ -1,0 +1,16 @@
+.nav-edge.nav-edge--dark,
+.nav-edge.nav-edge--dark:before {background:#000;}
+.nav-edge.nav-edge--dark:after {color:#FFF;}
+
+.nav-edge.nav-edge--dark li {padding:5px;border-bottom:1px solid #222;}
+.nav-edge.nav-edge--dark li:last-child {border-bottom:0px;}
+.nav-edge.nav-edge--dark li.active > a,
+.nav-edge.nav-edge--dark li:hover:not(.disabled):not(.sub) > a {background-color:rgba(255,255,255,0.15);}
+
+.nav-edge.nav-edge--dark li > a .kt-nav__link-text,
+.nav-edge.nav-edge--dark li.active > a .kt-nav__link-icon,
+.nav-edge.nav-edge--dark li.active > a .kt-nav__link-text,
+.nav-edge.nav-edge--dark li.active > a .kt-nav__link-arrow,
+.nav-edge.nav-edge--dark li:hover:not(.disabled):not(.sub) > a .kt-nav__link-icon,
+.nav-edge.nav-edge--dark li:hover:not(.disabled):not(.sub) > a .kt-nav__link-text,
+.nav-edge.nav-edge--dark li:hover:not(.disabled):not(.sub) > a .kt-nav__link-arrow {color:#FFF;}

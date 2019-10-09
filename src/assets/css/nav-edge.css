@@ -1,0 +1,51 @@
+.nav-edge {width:125px;position:fixed;list-style:none;padding:0px;margin:0;z-index:50;background:#FAFAFA;box-shadow:0px 0px 50px 0px rgba(82, 63, 105, 0.15);display:flex;justify-content:center;align-items:center;flex-direction:column;transition:all 0.3s;}
+
+.nav-edge li {padding:5px;border-bottom:1px solid #F0F0F0;}
+.nav-edge li:last-child {border-bottom:0px;}
+.nav-edge li > a:focus {background:transparent;}
+.nav-edge li.active > a,
+.nav-edge li:hover:not(.disabled):not(.sub) > a {background-color:rgba(0,0,0,0.15);}
+
+.nav-edge li.active > a .kt-nav__link-icon,
+.nav-edge li.active > a .kt-nav__link-text,
+.nav-edge li.active > a .kt-nav__link-arrow {transition:color 0.6s;}
+.nav-edge li.active > a .kt-nav__link-icon,
+.nav-edge li.active > a .kt-nav__link-text,
+.nav-edge li.active > a .kt-nav__link-arrow,
+.nav-edge li:hover:not(.disabled):not(.sub) > a .kt-nav__link-icon,
+.nav-edge li:hover:not(.disabled):not(.sub) > a .kt-nav__link-text,
+.nav-edge li:hover:not(.disabled):not(.sub) > a .kt-nav__link-arrow {color:#666;}
+
+.nav-edge:before,
+.nav-edge:after {display:flex;align-items:center;justify-content:center;width:40px;height:40px;position:absolute;transition:all 0.2s;}
+.nav-edge:before {background:#FAFAFA;border-radius:0 50% 50% 0;}
+.nav-edge:after {font-family:'Font Awesome 5 Free';font-weight:900;font-size:1.2em;}
+.nav-edge:hover:before {width:0;}
+.nav-edge:hover:after {width:0;color:transparent!important;transform:scaleX(-0.5);}
+
+.nav-edge li > a {padding:0.6rem 2em;border-radius:4px;}
+
+.nav-edge--left {top:25%;left:-110px;border-radius:0 5px 5px 0;}
+.nav-edge--left:hover {left:0;}
+.nav-edge--left:before,
+.nav-edge--left:after {right:-20px;}
+.nav-edge--left:hover:before,
+.nav-edge--left:hover:after {right:0;}
+.nav-edge--left:after {content:"\f101";}
+
+@media(min-width:1420px){
+    .nav-edge--left {left:0;}
+    .nav-edge--left:before,
+    .nav-edge--left:after {content:none!important;}
+}
+
+.nav-edge--right {top:30%;right:0;border-radius:5px 0 0 5px;}
+
+.nav-edge--left li,
+.nav-edge--right li {width:100%;}
+
+.nav-edge--left li > a,
+.nav-edge--right li > a {flex-direction:column;}
+
+.nav-edge--left li > a .kt-nav__link-icon,
+.nav-edge--right li > a .kt-nav__link-icon {font-size:2rem;line-height:1.5;}

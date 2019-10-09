@@ -3,9 +3,9 @@ namespace kilyakus\widget\navedge;
 
 use Yii;
 use yii\base\Widget;
-use yii\base\InvalidConfigException;
 use yii\helpers\Html;
 use yii\helpers\Inflector;
+use kilyakus\nav\Nav;
 
 class NavEdge extends Widget
 {
@@ -52,7 +52,28 @@ class NavEdge extends Widget
 
 	public function run()
 	{
-		echo $this->render('test',['left' => $this->left, 'right' => $this->right]);
+
+		if(isset($this->left['items'])){
+		    echo Nav::widget([
+		        'options' => [
+		            'class' => 'nav-edge nav-edge--left nav-edge--'.$this->left['theme'],
+		        ],
+		        'items' => $this->left['items']
+		    ]);
+
+		}
+
+		if(isset($this->right['items'])){
+		    
+		    echo Nav::widget([
+		        'options' => [
+		            'class' => 'nav-edge nav-edge--right nav-edge--'.$this->right['theme'],
+		        ],
+		        'items' => $this->right['items']
+		    ]);
+
+		}
+
 		// $this->registerPlugin('nav-edge');
 		$this->registerAssets();
 	}
@@ -61,8 +82,14 @@ class NavEdge extends Widget
 	{
 		$view = $this->getView();
 		NavEdgeAsset::register($view);
-		if (in_array($this->theme, self::$_inbuiltTypes)) {
-			$bundleClass = __NAMESPACE__ . '\Theme' . Inflector::id2camel($this->theme) . 'Asset';
+
+		if ($this->left['theme'] && in_array($this->left['theme'], self::$_inbuiltTypes)) {
+			$bundleClass = __NAMESPACE__ . '\Theme' . Inflector::id2camel($this->left['theme']) . 'Asset';
+			$bundleClass::register($view);
+		}
+
+		if ($this->right['theme'] && in_array($this->right['theme'], self::$_inbuiltTypes)) {
+			$bundleClass = __NAMESPACE__ . '\Theme' . Inflector::id2camel($this->right['theme']) . 'Asset';
 			$bundleClass::register($view);
 		}
 	}
