@@ -17,18 +17,18 @@
 .nav-edge li:hover:not(.disabled):not(.sub) > a .kt-nav__link-arrow {color:#666;}
 
 .nav-edge:before,
-.nav-edge:after {display:flex;align-items:center;justify-content:center;width:40px;height:40px;position:absolute;transition:all 0.2s;}
-.nav-edge:before {background:#FAFAFA;border-radius:0 50% 50% 0;}
+.nav-edge:after {display:flex;align-items:center;justify-content:center;width:40px;height:40px;position:absolute;transition:all 0.2s;top:50%;}
+.nav-edge:before {background:#FAFAFA;border-radius:0 5px 5px 0;}
 .nav-edge:after {font-family:'Font Awesome 5 Free';font-weight:900;font-size:1.2em;}
 .nav-edge:hover:before {width:0;}
 .nav-edge:hover:after {width:0;color:transparent!important;transform:scaleX(-0.5);}
 
 .nav-edge li > a {padding:0.6rem 2em;border-radius:4px;}
 
-.nav-edge--left {top:25%;left:-110px;border-radius:0 5px 5px 0;}
+.nav-edge--left {top:25%;left:-125px;border-radius:0 5px 5px 0;}
 .nav-edge--left:hover {left:0;}
 .nav-edge--left:before,
-.nav-edge--left:after {right:-20px;}
+.nav-edge--left:after {right:-35px;margin-top:-20px;}
 .nav-edge--left:hover:before,
 .nav-edge--left:hover:after {right:0;}
 .nav-edge--left:after {content:"\f101";}
